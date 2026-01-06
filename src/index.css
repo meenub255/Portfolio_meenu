@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 6% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 5% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 280 60% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 85% 97%;
+
+    --border: 240 6% 20%;
+    --input: 240 6% 20%;
+    --ring: 263 70% 60%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 240 10% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 263 70% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 60% 55%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 6% 20%;
+    --sidebar-ring: 263 70% 60%;
+
+    --chart-1: 263 70% 60%;
+    --chart-2: 280 60% 55%;
+    --chart-3: 230 70% 60%;
+    --chart-4: 320 70% 55%;
+    --chart-5: 190 60% 50%;
+
+    --sidebar: 240 10% 6%;
+
+    --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 60%), hsl(280 60% 55%));
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 4%) 0%, hsl(263 30% 12%) 50%, hsl(240 10% 4%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 10%) 0%, hsl(240 10% 6%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(263 70% 70%), hsl(280 60% 65%), hsl(230 70% 70%));
+
+    --shadow-glow: 0 0 40px hsl(263 70% 60% / 0.3);
+    --shadow-glow-sm: 0 0 20px hsl(263 70% 60% / 0.2);
+    --shadow-card: 0 4px 30px hsl(0 0% 0% / 0.3);
+
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.1);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.1);
+    --shadow-sm: 0 2px 8px 0px hsl(0 0% 0% / 0.2);
+    --shadow: 0 4px 16px 0px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 8px 24px 0px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 12px 40px 0px hsl(0 0% 0% / 0.3);
+    --shadow-xl: 0 20px 60px 0px hsl(0 0% 0% / 0.4);
+    --shadow-2xl: 0 25px 80px 0px hsl(0 0% 0% / 0.5);
+
+    --spacing: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
