@@ -6,20 +6,24 @@ const Skills = () => {
 
   const skillCategories = [
     {
-      title: "Languages",
-      skills: ["Python", "JavaScript", "TypeScript", "SQL"]
+      title: "Programming Languages",
+      skills: ["C", "C++", "Python", "R"]
     },
     {
-      title: "ML & AI",
-      skills: ["TensorFlow", "PyTorch", "Scikit-learn", "OpenCV", "Deep Learning"]
+      title: "Quantum & Math",
+      skills: ["Statistical Modeling", "Probabilistic Data Generation", "Neuro-Fuzzy Logic", "High-Dimensional Vector Spaces", "Tensor Representations"]
     },
     {
-      title: "Web Development",
-      skills: ["React", "Node.js", "HTML/CSS", "REST APIs"]
+      title: "Core AI & GenAI",
+      skills: ["Machine Learning", "Generative AI (LLMs, GANs, RAG)", "NLP", "Computer Vision", "Model Context Protocol (MCP)"]
     },
     {
-      title: "Tools & Platforms",
-      skills: ["Git", "Jupyter", "Docker", "AWS"]
+      title: "Frameworks & Libraries",
+      skills: ["TensorFlow", "PyTorch", "LangGraph", "Scikit-learn", "Hugging Face", "Pandas", "NumPy", "Matplotlib", "MATLAB"]
+    },
+    {
+      title: "Databases & Task Queues",
+      skills: ["MySQL", "PostgreSQL", "Qdrant (Vector DB)", "Redis", "Celery"]
     }
   ];
 
@@ -44,20 +48,20 @@ const Skills = () => {
 
         <div 
           ref={cardsRef}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {skillCategories.map((category, index) => (
             <div
               key={index}
               className={`p-6 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm hover:-translate-y-2 animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
-              style={{ transitionDelay: `${index * 0.15}s` }}
+              style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <h3 className="text-lg font-semibold mb-4 text-primary">{category.title}</h3>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1.5 text-sm rounded-lg bg-secondary text-secondary-foreground border border-border/50 hover:border-primary/50 hover:bg-primary/10 hover:scale-110 transition-all duration-300 cursor-default"
+                    className="px-3 py-1.5 text-sm rounded-lg bg-secondary text-secondary-foreground border border-border/50 hover:border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all duration-300 cursor-default"
                   >
                     {skill}
                   </span>
