@@ -30,11 +30,11 @@ const About = () => {
           ref={sectionRef}
           className={`text-center mb-16 animate-on-scroll ${sectionVisible ? 'animate-visible' : ''}`}
         >
-          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4">
+          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4 animate-pulse-scale">
             ABOUT ME
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent">
+            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent animate-gradient-text">
               AI Engineer & Researcher
             </span>
           </h2>
@@ -44,6 +44,7 @@ const About = () => {
             ML pipelines to conducting research in quantum computing, neuro-fuzzy systems, and 
             LLM interpretability. I thrive at the intersection of innovation and real-world impact.
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6 animate-expand-line" />
         </div>
 
         <div 
@@ -53,15 +54,15 @@ const About = () => {
           {highlights.map((item, index) => (
             <div
               key={index}
-              className={`group relative p-8 rounded-2xl bg-[image:var(--gradient-card)] border border-border/50 transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm tilt-card animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
+              className={`group relative p-8 rounded-2xl bg-[image:var(--gradient-card)] border border-border/50 transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm tilt-card card-hover animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
               style={{ transitionDelay: `${index * 0.15}s` }}
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
-                <div className="w-14 h-14 rounded-xl bg-[image:var(--gradient-primary)] flex items-center justify-center mb-6 group-hover:shadow-glow-sm transition-shadow duration-500 group-hover:scale-110">
+                <div className="w-14 h-14 rounded-xl bg-[image:var(--gradient-primary)] flex items-center justify-center mb-6 group-hover:shadow-glow-sm transition-all duration-500 group-hover:scale-110 group-hover:rotate-12">
                   <item.icon className="w-7 h-7 text-primary-foreground" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.description}</p>
               </div>
             </div>

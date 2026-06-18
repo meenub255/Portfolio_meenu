@@ -36,14 +36,15 @@ const Skills = () => {
           ref={sectionRef}
           className={`text-center mb-16 animate-on-scroll ${sectionVisible ? 'animate-visible' : ''}`}
         >
-          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4">
+          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4 animate-pulse-scale">
             EXPERTISE
           </span>
           <h2 className="text-4xl md:text-5xl font-bold">
-            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent">
+            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent animate-gradient-text">
               Skills & Technologies
             </span>
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6 animate-expand-line" />
         </div>
 
         <div 
@@ -53,7 +54,7 @@ const Skills = () => {
           {skillCategories.map((category, index) => (
             <div
               key={index}
-              className={`p-6 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm hover:-translate-y-2 animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
+              className={`p-6 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm hover:-translate-y-2 card-hover animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <h3 className="text-lg font-semibold mb-4 text-primary">{category.title}</h3>
@@ -61,7 +62,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1.5 text-sm rounded-lg bg-secondary text-secondary-foreground border border-border/50 hover:border-primary/50 hover:bg-primary/10 hover:scale-105 transition-all duration-300 cursor-default"
+                    className="px-3 py-1.5 text-sm rounded-lg bg-secondary text-secondary-foreground border border-border/50 hover:border-primary/50 hover:bg-primary/10 hover:scale-105 hover:shadow-glow-sm transition-all duration-300 cursor-default"
                   >
                     {skill}
                   </span>

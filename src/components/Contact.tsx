@@ -32,17 +32,18 @@ const Contact = () => {
           ref={sectionRef}
           className={`text-center mb-16 animate-on-scroll ${sectionVisible ? 'animate-visible' : ''}`}
         >
-          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4">
+          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4 animate-pulse-scale">
             GET IN TOUCH
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent">
+            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent animate-gradient-text">
               Let's Work Together
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? I'd love to hear from you.
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6 animate-expand-line" />
         </div>
 
         <div 
@@ -63,9 +64,9 @@ const Contact = () => {
                 href="https://github.com/meenub255"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2 card-hover"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Github className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -78,9 +79,9 @@ const Contact = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2 card-hover"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Linkedin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -91,9 +92,9 @@ const Contact = () => {
 
               <a
                 href="mailto:contact@example.com"
-                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2 card-hover"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -120,7 +121,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground hover:border-primary/50"
+                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground hover:border-primary/50 hover:shadow-glow-sm"
                 placeholder="Your name"
               />
             </div>
@@ -136,7 +137,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground hover:border-primary/50"
+                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground hover:border-primary/50 hover:shadow-glow-sm"
                 placeholder="your@email.com"
               />
             </div>
@@ -152,14 +153,14 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 resize-none text-foreground placeholder:text-muted-foreground hover:border-primary/50"
+                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 resize-none text-foreground placeholder:text-muted-foreground hover:border-primary/50 hover:shadow-glow-sm"
                 placeholder="Tell me about your project..."
               />
             </div>
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground font-medium transition-all duration-300 hover:shadow-glow hover:scale-[1.02] active:scale-[0.98]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground font-medium transition-all duration-300 hover:shadow-glow hover:scale-[1.02] active:scale-[0.98] hover-glow"
             >
               <Send className="w-5 h-5" />
               Send Message

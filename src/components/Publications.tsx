@@ -1,4 +1,4 @@
-import { BookOpen, ExternalLink } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Publications = () => {
@@ -52,17 +52,18 @@ const Publications = () => {
           ref={sectionRef}
           className={`text-center mb-16 animate-on-scroll ${sectionVisible ? 'animate-visible' : ''}`}
         >
-          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4">
+          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4 animate-pulse-scale">
             PUBLICATIONS
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent">
+            <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent animate-gradient-text">
               Research & Publications
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Published research in IEEE conferences, Wiley publications, and peer-reviewed journals
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto mt-6 animate-expand-line" />
         </div>
 
         <div 
@@ -72,11 +73,11 @@ const Publications = () => {
           {publications.map((pub, index) => (
             <div
               key={index}
-              className={`group relative p-6 rounded-2xl bg-[image:var(--gradient-card)] border border-border/50 transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm hover:-translate-y-1 animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
+              className={`group relative p-6 rounded-2xl bg-[image:var(--gradient-card)] border border-border/50 transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm hover:-translate-y-1 card-hover animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
               style={{ transitionDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <BookOpen className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex-grow">
@@ -90,7 +91,7 @@ const Publications = () => {
                     <span className="text-muted-foreground">{pub.location}</span>
                     <span className="text-muted-foreground">•</span>
                     <span className="text-primary font-medium">{pub.date}</span>
-                    <span className="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary border border-primary/30">
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors cursor-default">
                       {pub.type}
                     </span>
                   </div>
