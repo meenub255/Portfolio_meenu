@@ -15,7 +15,7 @@ const Projects = () => {
       featured: true
     },
     {
-      title: "Medicinal Plants Identification",
+      title: "Identification of Medicinal Plants Raw materials through Image Processing Using Machine Learning",
       description: "Identification of medicinal plants and raw materials through image processing using machine learning. A comprehensive solution for botanical analysis.",
       tech: ["Python", "OpenCV", "TensorFlow", "Image Processing"],
       github: "https://github.com/meenub255/Identification-of-Medicinal-Plants-Raw-materials-through-Image-Processing-Using-Machine-Learning",
