@@ -81,71 +81,90 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <div className="mb-6 animate-fade-in">
-          <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider animate-gradient">
-            AI ENGINEER & RESEARCHER
-          </span>
-        </div>
+      <div className="relative z-10 px-4 max-w-6xl mx-auto w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16">
+          {/* Text Content */}
+          <div className="text-center lg:text-left flex-1">
+            <div className="mb-6 animate-fade-in">
+              <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider animate-gradient">
+                AI ENGINEER & RESEARCHER
+              </span>
+            </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight animate-fade-in-up">
-          <span className="text-foreground">Hi, I'm </span>
-          <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent text-shimmer">
-            Meenu
-          </span>
-        </h1>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight animate-fade-in-up">
+              <span className="text-foreground">Hi, I'm </span>
+              <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent text-shimmer">
+                Meenu
+              </span>
+            </h1>
 
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200">
-          Building intelligent systems and advancing research in{" "}
-          <span className="text-primary font-semibold">{displayText}</span>
-          <span className="typing-cursor text-primary">|</span>
-        </p>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed animate-fade-in-up delay-200">
+              Building intelligent systems and advancing research in{" "}
+              <span className="text-primary font-semibold">{displayText}</span>
+              <span className="typing-cursor text-primary">|</span>
+            </p>
 
-        <div className="flex items-center justify-center gap-4 mb-16 animate-fade-in-up delay-300">
-          <a
-            href="https://github.com/meenub255"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 px-6 py-3 rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground font-medium transition-all duration-300 hover:shadow-glow hover:scale-105"
-          >
-            <Github className="w-5 h-5 animate-wave" />
-            <span>View GitHub</span>
-          </a>
-          <a
-            href="#contact"
-            className="group flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card/50 text-foreground font-medium transition-all duration-300 hover:border-primary hover:bg-primary/10 hover-glow"
-          >
-            <Mail className="w-5 h-5" />
-            <span>Contact Me</span>
-          </a>
-        </div>
+            <div className="flex items-center justify-center lg:justify-start gap-4 mb-10 animate-fade-in-up delay-300">
+              <a
+                href="https://github.com/meenub255"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 px-6 py-3 rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground font-medium transition-all duration-300 hover:shadow-glow hover:scale-105"
+              >
+                <Github className="w-5 h-5 animate-wave" />
+                <span>View GitHub</span>
+              </a>
+              <a
+                href="#contact"
+                className="group flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card/50 text-foreground font-medium transition-all duration-300 hover:border-primary hover:bg-primary/10 hover-glow"
+              >
+                <Mail className="w-5 h-5" />
+                <span>Contact Me</span>
+              </a>
+            </div>
 
-        <div className="flex items-center justify-center gap-6 animate-fade-in-up delay-400">
-          <a
-            href="https://github.com/meenub255"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:rotate-12"
-            aria-label="GitHub"
-          >
-            <Github className="w-6 h-6" />
-          </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:rotate-12"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="mailto:contact@example.com"
-            className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:rotate-12"
-            aria-label="Email"
-          >
-            <Mail className="w-6 h-6" />
-          </a>
+            <div className="flex items-center justify-center lg:justify-start gap-6 animate-fade-in-up delay-400">
+              <a
+                href="https://github.com/meenub255"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:rotate-12"
+                aria-label="GitHub"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:rotate-12"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="mailto:contact@example.com"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:rotate-12"
+                aria-label="Email"
+              >
+                <Mail className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+
+          {/* Profile Photo */}
+          <div className="flex-shrink-0 animate-scale-in">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-2xl animate-pulse" />
+              <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow hover:shadow-glow hover:scale-105 transition-all duration-500">
+                <img 
+                  src="/profile.jpg" 
+                  alt="Meenu" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
