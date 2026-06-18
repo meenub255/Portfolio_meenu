@@ -153,7 +153,7 @@ const Hero = () => {
           </div>
 
           {/* Profile Photo */}
-          <div className="flex-shrink-0 animate-scale-in">
+          <div className="flex-shrink-0 animate-fade-in-up delay-300">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-2xl animate-pulse" />
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow hover:shadow-glow hover:scale-105 transition-all duration-500">
