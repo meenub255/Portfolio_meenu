@@ -53,7 +53,7 @@ const Skills = () => {
               style={{ transitionDelay: `${index * 0.15}s` }}
             >
               <h3 className="text-lg font-semibold mb-4 text-primary">{category.title}</h3>
-              <div className="flex flex-wrap gap-2 fade-in-up-stagger">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
