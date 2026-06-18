@@ -33,13 +33,6 @@ const Publications = () => {
       location: "Chapter 15, Wiley Publications",
       date: "2025",
       type: "Book Chapter"
-    },
-    {
-      title: "Towards Personalized News Recommendation Using Collaborative Filtering and Multi-Armed Bandits (MAB)",
-      venue: "International Journal of Electrical and Computer Engineering Systems",
-      location: "Forthcoming",
-      date: "2025",
-      type: "Journal"
     }
   ];
 
