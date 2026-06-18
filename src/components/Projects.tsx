@@ -39,6 +39,20 @@ const Projects = () => {
       featured: true
     },
     {
+      title: "Neuro-Fuzzy Autonomous Navigation",
+      description: "Real-time autonomous navigation system using Interval Type-2 Neuro-Fuzzy Logic with YOLOv8 for monocular vision-only lane detection and obstacle avoidance.",
+      tech: ["Python", "YOLOv8", "Fuzzy Logic", "Flask", "Computer Vision"],
+      github: "https://github.com/meenub255/Neuro_Fuzzy_Autonomous_System",
+      featured: true
+    },
+    {
+      title: "Process-Aware Hallucination Attribution",
+      description: "Research framework for mitigating LLM hallucinations in RAG systems using Integrated Gradients and surgical activation steering for token-level attribution.",
+      tech: ["Python", "PyTorch", "Transformers", "LLM", "Interpretability"],
+      github: "https://github.com/meenub255/Process-Aware-Hallucination-Attribution",
+      featured: true
+    },
+    {
       title: "Snake AI with Deep Q-Learning",
       description: "An AI agent that learns to play the classic Snake game using Deep Q-Learning. Demonstrates reinforcement learning principles in a fun, visual way.",
       tech: ["Python", "PyTorch", "Deep Learning", "Reinforcement Learning"],
