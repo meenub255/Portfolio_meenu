@@ -18,6 +18,20 @@ const Projects = () => {
       featured: true
     },
     {
+      title: "Custom Linear Regression Library",
+      description: "A robust, pure NumPy-based linear regression library implementing all major regression features from scratch including L1/L2 regularization, feature selection, KNN regression, and advanced diagnostics.",
+      tech: ["Python", "NumPy", "SciPy", "Machine Learning"],
+      github: "https://github.com/meenub255/CUSTOM-LINEAR-REGRESSION",
+      featured: true
+    },
+    {
+      title: "Quantum Ansätze for Mitigating Mode Collapse",
+      description: "Hybrid Quantum-Classical GAN for medical data generation using PennyLane and PyTorch. Achieves quantum advantage with lower Wasserstein distance over classical baselines.",
+      tech: ["Python", "PennyLane", "PyTorch", "Quantum Computing", "GAN"],
+      github: "https://github.com/meenub255/Quantum-Ans-tze-for-Mitigating-Mode-Collapse-in-Medical-Data-Generation",
+      featured: true
+    },
+    {
       title: "Snake AI with Deep Q-Learning",
       description: "An AI agent that learns to play the classic Snake game using Deep Q-Learning. Demonstrates reinforcement learning principles in a fun, visual way.",
       tech: ["Python", "PyTorch", "Deep Learning", "Reinforcement Learning"],
@@ -39,7 +53,7 @@ const Projects = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A collection of my work in Machine Learning, AI, and software development
+            A collection of my work in Machine Learning, AI, Data Science, and software development
           </p>
         </div>
 
