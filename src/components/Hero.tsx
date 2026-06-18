@@ -33,16 +33,6 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, textIndex, texts]);
 
-  useEffect(() => {
-    if (index < fullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + fullText[index]);
-        setIndex((prev) => prev + 1);
-      }, 100);
-      return () => clearTimeout(timeout);
-    }
-  }, [index, fullText]);
-
   const particles = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     left: Math.random() * 100,
