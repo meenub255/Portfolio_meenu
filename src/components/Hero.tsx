@@ -161,9 +161,8 @@ const Hero = () => {
                   src="/profile.jpg" 
                   alt="Meenu" 
                   className="w-full h-full object-cover"
-                  style={{ filter: "saturate(1.1) brightness(0.95) contrast(1.05)" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 mix-blend-overlay" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 mix-blend-overlay" />
               </div>
             </div>
           </div>
