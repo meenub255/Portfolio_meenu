@@ -7,8 +7,31 @@ const Hero = () => {
   };
 
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Machine Learning Enthusiast";
-  const [index, setIndex] = useState(0);
+  const texts = ["AI Engineer", "Researcher", "ML Developer"];
+  const [textIndex, setTextIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentText = texts[textIndex];
+    
+    const timeout = setTimeout(() => {
+      if (!isDeleting && charIndex < currentText.length) {
+        setDisplayText(currentText.substring(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+      } else if (!isDeleting && charIndex === currentText.length) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && charIndex > 0) {
+        setDisplayText(currentText.substring(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % texts.length);
+      }
+    }, isDeleting ? 50 : 100);
+
+    return () => clearTimeout(timeout);
+  }, [charIndex, isDeleting, textIndex, texts]);
 
   useEffect(() => {
     if (index < fullText.length) {
@@ -71,7 +94,7 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
         <div className="mb-6 animate-fade-in">
           <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider animate-gradient">
-            DEVELOPER & ML ENTHUSIAST
+            AI ENGINEER & RESEARCHER
           </span>
         </div>
 
@@ -83,7 +106,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in-up delay-200">
-          Passionate about building intelligent systems with{" "}
+          Building intelligent systems and advancing research in{" "}
           <span className="text-primary font-semibold">{displayText}</span>
           <span className="typing-cursor text-primary">|</span>
         </p>

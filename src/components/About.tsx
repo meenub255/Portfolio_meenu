@@ -8,18 +8,18 @@ const About = () => {
   const highlights = [
     {
       icon: Brain,
-      title: "Machine Learning",
-      description: "Building intelligent systems with deep learning and neural networks"
+      title: "AI Engineering",
+      description: "Designing and deploying production-grade AI systems with deep learning, NLP, and computer vision"
     },
     {
       icon: Code2,
-      title: "Full Stack Dev",
-      description: "Creating robust applications from frontend to backend"
+      title: "Research & Innovation",
+      description: "Pushing boundaries in quantum ML, neuro-fuzzy systems, and LLM interpretability"
     },
     {
       icon: Sparkles,
-      title: "AI Solutions",
-      description: "Developing practical AI applications for real-world problems"
+      title: "Applied AI Solutions",
+      description: "Bridging research and real-world impact through RAG systems, GANs, and autonomous systems"
     }
   ];
 
@@ -35,14 +35,14 @@ const About = () => {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-[image:var(--gradient-text)] bg-clip-text text-transparent">
-              Passionate Developer
+              AI Engineer & Researcher
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a developer with a deep interest in Machine Learning and Artificial Intelligence. 
-            I love exploring new technologies and building solutions that make a real impact. 
-            My projects range from AI-based content moderation to medicinal plant identification 
-            using image processing and machine learning.
+            I'm an AI Engineer and Researcher passionate about developing intelligent systems 
+            that push the boundaries of what's possible. My work spans from building production-grade 
+            ML pipelines to conducting research in quantum computing, neuro-fuzzy systems, and 
+            LLM interpretability. I thrive at the intersection of innovation and real-world impact.
           </p>
         </div>
 
