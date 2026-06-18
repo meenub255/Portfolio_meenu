@@ -1,6 +1,10 @@
 import { ExternalLink, Github, Star, GitFork } from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Projects = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation(0.1);
+  const { ref: cardsRef, isVisible: cardsVisible } = useScrollAnimation(0.05);
+
   const projects = [
     {
       title: "AI-Based Content Moderator",
@@ -64,7 +68,10 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-4 relative">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div 
+          ref={sectionRef}
+          className={`text-center mb-16 animate-on-scroll ${sectionVisible ? 'animate-visible' : ''}`}
+        >
           <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4">
             PORTFOLIO
           </span>
@@ -78,25 +85,29 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div 
+          ref={cardsRef}
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative flex flex-col p-6 rounded-2xl bg-[image:var(--gradient-card)] border border-border/50 transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm hover:-translate-y-1"
+              className={`group relative flex flex-col p-6 rounded-2xl bg-[image:var(--gradient-card)] border border-border/50 transition-all duration-500 hover:border-primary/50 hover:shadow-glow-sm hover:-translate-y-2 tilt-card animate-on-scroll ${cardsVisible ? 'animate-visible' : ''}`}
+              style={{ transitionDelay: `${index * 0.1}s` }}
             >
               {project.featured && (
-                <div className="absolute -top-3 right-4 px-3 py-1 rounded-full bg-[image:var(--gradient-primary)] text-xs font-medium text-primary-foreground">
+                <div className="absolute -top-3 right-4 px-3 py-1 rounded-full bg-[image:var(--gradient-primary)] text-xs font-medium text-primary-foreground animate-bounce-in">
                   Featured
                 </div>
               )}
               
               <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300">
                   <Github className="w-6 h-6 text-primary" />
                 </div>
                 <div className="flex items-center gap-3">
                   {project.stars && (
-                    <span className="flex items-center gap-1 text-sm text-muted-foreground">
+                    <span className="flex items-center gap-1 text-sm text-muted-foreground hover:text-yellow-400 transition-colors">
                       <Star className="w-4 h-4" />
                       {project.stars}
                     </span>
@@ -122,7 +133,7 @@ const Projects = () => {
                 {project.tech.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-2.5 py-1 text-xs rounded-md bg-secondary text-secondary-foreground"
+                    className="px-2.5 py-1 text-xs rounded-md bg-secondary text-secondary-foreground hover:bg-primary/20 hover:scale-105 transition-all duration-200 cursor-default"
                   >
                     {tech}
                   </span>
@@ -133,10 +144,10 @@ const Projects = () => {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline group/link"
               >
                 View on GitHub
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
               </a>
             </div>
           ))}
@@ -147,7 +158,7 @@ const Projects = () => {
             href="https://github.com/meenub255?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card/50 text-foreground font-medium transition-all duration-300 hover:border-primary hover:bg-primary/10"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border bg-card/50 text-foreground font-medium transition-all duration-300 hover:border-primary hover:bg-primary/10 hover:scale-105 hover-glow"
           >
             <Github className="w-5 h-5" />
             View All Repositories

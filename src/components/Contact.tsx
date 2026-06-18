@@ -1,7 +1,11 @@
 import { Mail, Github, Linkedin, Send } from "lucide-react";
 import { useState } from "react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 const Contact = () => {
+  const { ref: sectionRef, isVisible: sectionVisible } = useScrollAnimation(0.1);
+  const { ref: formRef, isVisible: formVisible } = useScrollAnimation(0.1);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,7 +14,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Open email client with prefilled data
     const subject = `Portfolio Contact from ${formData.name}`;
     const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
     window.location.href = `mailto:contact@example.com?subject=${subject}&body=${body}`;
@@ -25,7 +28,10 @@ const Contact = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent" />
       
       <div className="max-w-4xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+        <div 
+          ref={sectionRef}
+          className={`text-center mb-16 animate-on-scroll ${sectionVisible ? 'animate-visible' : ''}`}
+        >
           <span className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium tracking-wider mb-4">
             GET IN TOUCH
           </span>
@@ -39,9 +45,12 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div 
+          ref={formRef}
+          className="grid md:grid-cols-2 gap-12"
+        >
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className={`space-y-8 animate-slide-left ${formVisible ? 'animate-visible' : ''}`}>
             <div>
               <h3 className="text-xl font-semibold mb-4 text-foreground">Connect With Me</h3>
               <p className="text-muted-foreground mb-6">
@@ -54,9 +63,9 @@ const Contact = () => {
                 href="https://github.com/meenub255"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <Github className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -69,9 +78,9 @@ const Contact = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <Linkedin className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -82,9 +91,9 @@ const Contact = () => {
 
               <a
                 href="mailto:contact@example.com"
-                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-300 group hover:translate-x-2"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                   <Mail className="w-6 h-6 text-primary" />
                 </div>
                 <div>
@@ -96,7 +105,10 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form 
+            onSubmit={handleSubmit} 
+            className={`space-y-6 animate-slide-right ${formVisible ? 'animate-visible' : ''}`}
+          >
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                 Name
@@ -108,7 +120,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground"
+                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground hover:border-primary/50"
                 placeholder="Your name"
               />
             </div>
@@ -124,7 +136,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground"
+                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 text-foreground placeholder:text-muted-foreground hover:border-primary/50"
                 placeholder="your@email.com"
               />
             </div>
@@ -140,14 +152,14 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 resize-none text-foreground placeholder:text-muted-foreground"
+                className="w-full px-4 py-3 rounded-xl bg-card border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all duration-300 resize-none text-foreground placeholder:text-muted-foreground hover:border-primary/50"
                 placeholder="Tell me about your project..."
               />
             </div>
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground font-medium transition-all duration-300 hover:shadow-glow hover:scale-[1.02]"
+              className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[image:var(--gradient-primary)] text-primary-foreground font-medium transition-all duration-300 hover:shadow-glow hover:scale-[1.02] active:scale-[0.98]"
             >
               <Send className="w-5 h-5" />
               Send Message
