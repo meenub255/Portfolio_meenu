@@ -32,6 +32,13 @@ const Projects = () => {
       featured: true
     },
     {
+      title: "Self-Healing RAG System",
+      description: "A production-grade Retrieval-Augmented Generation system with auto-correction, HyDE retrieval, query decomposition, cross-encoder reranking, and web search fallback.",
+      tech: ["Python", "LangChain", "LlamaIndex", "OpenAI", "Flask"],
+      github: "https://github.com/meenub255/Next_Generation_RAG",
+      featured: true
+    },
+    {
       title: "Snake AI with Deep Q-Learning",
       description: "An AI agent that learns to play the classic Snake game using Deep Q-Learning. Demonstrates reinforcement learning principles in a fun, visual way.",
       tech: ["Python", "PyTorch", "Deep Learning", "Reinforcement Learning"],
